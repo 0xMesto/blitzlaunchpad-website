@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlitzLaunchpad Services - Empowering Non-Technical Founders</title>
+    <link rel="icon" type="image/png" href="assets/images/fav_icon.png">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="js/script.js" defer></script>
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        .bg-blur {
+            backdrop-filter: blur(8px);
+        }
+        .process-arrow::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -30px;
+            width: 30px;
+            height: 2px;
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            transform: translateY(-50%);
+        }
+        @media (max-width: 768px) {
+            .process-arrow::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-blue-900 via-indigo-900 to-purple-900 text-white">
+    <%- include('../components/header') %>
+
+    <main class="pt-24">
+        <!-- Hero Section -->
+        <section class="py-20 relative overflow-hidden">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="max-w-5xl mx-auto text-center">
+                    <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400" data-aos="zoom-in">
+                        Our Launchpad Services
+                    </h1>
+                    <p class="text-2xl sm:text-3xl mb-10 text-blue-100" data-aos="fade-up" data-aos-delay="200">
+                        Empowering non-technical founders to build, launch, and scale
+                    </p>
+                </div>
+            </div>
+            <div class="absolute top-0 left-0 w-full h-full opacity-30">
+                <div class="absolute top-1/4 left-1/4 w-1/3 h-1/3 bg-blue-500 rounded-full filter blur-3xl animate-float"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-1/3 h-1/3 bg-purple-500 rounded-full filter blur-3xl animate-float" style="animation-delay: 2s;"></div>
+            </div>
+        </section>
+
+        <!-- Services Overview -->
+        <section class="py-20 relative overflow-hidden">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <h2 class="text-4xl sm:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400" data-aos="fade-down">
+                    Our Core Services
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="bg-white bg-opacity-10 rounded-xl p-8 backdrop-filter backdrop-blur-lg transition-all duration-300 hover:bg-opacity-20 hover:shadow-2xl" data-aos="fade-up">
+                        <div class="bg-blue-700 p-6 rounded-full mb-6 inline-block">
+                            <i class="fas fa-lightbulb text-4xl text-yellow-300"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-blue-200">Idea Validation</h3>
+                        <p class="text-blue-100 mb-4">We help refine and validate your startup idea to ensure market fit.</p>
+                        <ul class="text-blue-200 space-y-2">
+                            <li><i class="fas fa-check-circle mr-2 text-green-400"></i>Market research</li>
+                            <li><i class="fas fa-check-circle mr-2 text-green-400"></i>Competitor analysis</li>
+                            <li><i class="fas fa-check-circle mr-2 text-green-400"></i>Value proposition refinement</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white bg-opacity-10 rounded-xl p-8 backdrop-filter backdrop-blur-lg transition-all duration-300 hover:bg-opacity-20 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="200">
+                        <div class="bg-indigo-700 p-6 rounded-full mb-6 inline-block">
+                            <i class="fas fa-code text-4xl text-blue-300"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-blue-200">MVP Development</h3>
+                        <p class="text-blue-100 mb-4">Rapid development of your Minimum Viable Product to test your concept.</p>
+                        <ul class="text-blue-200 space-y-2">
+                            <li><i class="fas fa-check-circle mr-2 text-green-400"></i>Agile development process</li>
+                            <li><i class="fas fa-check-circle mr-2 text-green-400"></i>User-centric design</li>
+                            <li><i class="fas fa-check-circle mr-2 text-green-400"></i>Scalable architecture</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white bg-opacity-10 rounded-xl p-8 backdrop-filter backdrop-blur-lg transition-all duration-300 hover:bg-opacity-20 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="400">
+                        <div class="bg-purple-700 p-6 rounded-full mb-6 inline-block">
+                            <i class="fas fa-rocket text-4xl text-pink-300"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-blue-200">Launch Support</h3>
+                        <p class="text-blue-100 mb-4">Guidance and technical support to successfully launch your startup.</p>
+                        <ul class="text-blue-200 space-y-2">
+                            <li><i class="fas fa-check-circle mr-2 text-green-400"></i>Go-to-market strategy</li>
+                            <li><i class="fas fa-check-circle mr-2 text-green-400"></i>Technical infrastructure setup</li>
+                            <li><i class="fas fa-check-circle mr-2 text-green-400"></i>Initial user acquisition</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Process -->
+        <section class="py-20 bg-gradient-to-r from-blue-800 via-indigo-800 to-purple-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl sm:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400" data-aos="fade-down">
+                    Our Process
+                </h2>
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0 md:space-x-8">
+                    <div class="bg-white bg-opacity-10 rounded-xl p-8 backdrop-filter backdrop-blur-lg w-full md:w-1/4 text-center relative process-arrow" data-aos="fade-up">
+                        <div class="text-5xl font-bold mb-4 text-blue-400">01</div>
+                        <h3 class="text-2xl font-bold mb-2">Discovery</h3>
+                        <p class="text-blue-100">Understanding your vision and goals</p>
+                        <div class="mt-4">
+                            <i class="fas fa-search text-4xl text-blue-300"></i>
+                        </div>
+                    </div>
+                    <div class="bg-white bg-opacity-10 rounded-xl p-8 backdrop-filter backdrop-blur-lg w-full md:w-1/4 text-center relative process-arrow" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-5xl font-bold mb-4 text-blue-400">02</div>
+                        <h3 class="text-2xl font-bold mb-2">Strategy</h3>
+                        <p class="text-blue-100">Crafting a tailored roadmap for success</p>
+                        <div class="mt-4">
+                            <i class="fas fa-chess text-4xl text-green-300"></i>
+                        </div>
+                    </div>
+                    <div class="bg-white bg-opacity-10 rounded-xl p-8 backdrop-filter backdrop-blur-lg w-full md:w-1/4 text-center relative process-arrow" data-aos="fade-up" data-aos-delay="400">
+                        <div class="text-5xl font-bold mb-4 text-blue-400">03</div>
+                        <h3 class="text-2xl font-bold mb-2">Execution</h3>
+                        <p class="text-blue-100">Bringing your vision to life with agile development</p>
+                        <div class="mt-4">
+                            <i class="fas fa-laptop-code text-4xl text-yellow-300"></i>
+                        </div>
+                    </div>
+                    <div class="bg-white bg-opacity-10 rounded-xl p-8 backdrop-filter backdrop-blur-lg w-full md:w-1/4 text-center" data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-5xl font-bold mb-4 text-blue-400">04</div>
+                        <h3 class="text-2xl font-bold mb-2">Launch & Scale</h3>
+                        <p class="text-blue-100">Supporting your growth and market penetration</p>
+                        <div class="mt-4">
+                            <i class="fas fa-rocket text-4xl text-pink-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technologies We Use -->
+        <section class="py-20 relative overflow-hidden">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <h2 class="text-4xl sm:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400" data-aos="fade-down">
+                    Technologies We Use
+                </h2>
+                <div class="tech-carousel" data-aos="fade-up">
+                    <div class="bg-white bg-opacity-10 rounded-xl p-6 backdrop-filter backdrop-blur-lg text-center mx-2">
+                        <i class="fab fa-react text-6xl text-blue-400 mb-4"></i>
+                        <h3 class="text-xl font-bold">React</h3>
+                    </div>
+                    <div class="bg-white bg-opacity-10 rounded-xl p-6 backdrop-filter backdrop-blur-lg text-center mx-2">
+                        <i class="fab fa-node-js text-6xl text-green-400 mb-4"></i>
+                        <h3 class="text-xl font-bold">Node.js</h3>
+                    </div>
+                    <div class="bg-white bg-opacity-10 rounded-xl p-6 backdrop-filter backdrop-blur-lg text-center mx-2">
+                        <i class="fab fa-aws text-6xl text-yellow-400 mb-4"></i>
+                        <h3 class="text-xl font-bold">AWS</h3>
+                    </div>
+                    <div class="bg-white bg-opacity-10 rounded-xl p-6 backdrop-filter backdrop-blur-lg text-center mx-2">
+                        <i class="fab fa-python text-6xl text-blue-300 mb-4"></i>
+                        <h3 class="text-xl font-bold">Python</h3>
+                    </div>
+                    <div class="bg-white bg-opacity-10 rounded-xl p-6 backdrop-filter backdrop-blur-lg text-center mx-2">
+                        <i class="fab fa-angular text-6xl text-red-500 mb-4"></i>
+                        <h3 class="text-xl font-bold">Angular</h3>
+                    </div>
+                    <div class="bg-white bg-opacity-10 rounded-xl p-6 backdrop-filter backdrop-blur-lg text-center mx-2">
+                        <i class="fab fa-vuejs text-6xl text-green-500 mb-4"></i>
+                        <h3 class="text-xl font-bold">Vue.js</h3>
+                    </div>
+                    <div class="bg-white bg-opacity-10 rounded-xl p-6 backdrop-filter backdrop-blur-lg text-center mx-2">
+                        <i class="fab fa-docker text-6xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-bold">Docker</h3>
+                    </div>
+                    <div class="bg-white bg-opacity-10 rounded-xl p-6 backdrop-filter backdrop-blur-lg text-center mx-2">
+                        <i class="fab fa-golang text-6xl text-blue-400 mb-4"></i>
+                        <h3 class="text-xl font-bold">Go</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose BlitzLaunchpad -->
+     <!-- Why Choose BlitzLaunchpad -->
+<section class="py-20 bg-gradient-to-r from-blue-800 via-indigo-800 to-purple-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl sm:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+            Why Choose BlitzLaunchpad
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white bg-opacity-10 rounded-xl p-8 backdrop-filter backdrop-blur-lg">
+                <i class="fas fa-bolt text-4xl text-yellow-400 mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Speed to Market</h3>
+                <p class="text-blue-100">Launch your MVP in as little as 8 weeks, giving you a competitive edge.</p>
+            </div>
+            <div class="bg-white bg-opacity-10 rounded-xl p-8 backdrop-filter backdrop-blur-lg">
+                <i class="fas fa-hand-holding-usd text-4xl text-green-400 mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Cost-Effective</h3>
+                <p class="text-blue-100">Tailored solutions that fit early-stage startup budgets without compromising quality.</p>
+            </div>
+            <div class="bg-white bg-opacity-10 rounded-xl p-8 backdrop-filter backdrop-blur-lg">
+                <i class="fas fa-users-cog text-4xl text-blue-400 mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Expert Team</h3>
+                <p class="text-blue-100">Access to a diverse team of startup veterans and tech experts.</p>
+            </div>
+            <div class="bg-white bg-opacity-10 rounded-xl p-8 backdrop-filter backdrop-blur-lg">
+                <i class="fas fa-chart-line text-4xl text-purple-400 mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Scalability Focus</h3>
+                <p class="text-blue-100">We build with your future growth in mind, ensuring your tech can scale as you do.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- CTA Section -->
+<section class="py-20 relative overflow-hidden">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h2 class="text-4xl sm:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+            Ready to Bring Your Idea to Life?
+        </h2>
+        <p class="text-2xl mb-10 text-blue-100">
+            Let's discuss your project and start building your startup today.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+            <a href="#" class="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold py-3 px-8 rounded-full text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                Schedule a Call
+            </a>
+            <a href="#" class="bg-transparent border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white font-bold py-3 px-8 rounded-full text-xl transition-all duration-300">
+                View Pricing
+            </a>
+        </div>
+    </div>
+    <div class="absolute top-0 left-0 w-full h-full opacity-20">
+        <div class="absolute top-1/4 left-1/4 w-1/3 h-1/3 bg-blue-500 rounded-full filter blur-3xl animate-float"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-1/3 h-1/3 bg-purple-500 rounded-full filter blur-3xl animate-float" style="animation-delay: 2s;"></div>
+    </div>
+</section>
+    </main>
+
+    <%- include('../components/footer') %>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100  // This will trigger animations when the element is 100px from the bottom of the viewport
+        });
+
+        $(document).ready(function(){
+            $('.tech-carousel').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>

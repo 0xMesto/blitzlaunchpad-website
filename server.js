@@ -1,35 +1,58 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
+
 const app = express();
-const port = 4000;
 
-// Serve static files from the root directory
-app.use(express.static(path.join(__dirname)));
+// Set view engine and views directory
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
-// Serve index.html for the root route
+// Serve static files from 'assets' directory
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
+
+// Parse JSON and URL-encoded bodies
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Define routes
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+  res.render('index');
 });
 
-// For any other routes, try to send the corresponding HTML file
-app.use((req, res, next) => {
-    const filePath = path.join(__dirname, req.url);
-    res.sendFile(filePath, (err) => {
-        if (err && err.code === 'ENOENT') {
-            // If the file doesn't exist, move to the next middleware
-            next();
-        } else if (err) {
-            // For other errors, send a 500 error
-            res.status(500).send('Internal Server Error');
-        }
-    });
+app.get('/services', (req, res) => {
+  res.render('services');
 });
 
-// If no file is found, send a 404 error
-app.use((req, res) => {
-    res.status(404).send('404 - Not Found');
+app.get('/about', (req, res) => {
+  res.render('about');
 });
 
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+app.get('/contact', (req, res) => {
+  res.render('contact');
 });
+
+app.post('/submit-form', async (req, res) => {
+  try {
+    await saveFormSubmission(req.body);
+    res.json({ success: true, message: 'Form submitted successfully' });
+  } catch (error) {
+    console.error('Error saving submission:', error);
+    res.status(500).json({ success: false, message: 'Error saving submission' });
+  }
+});
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
+
+// Helper function to save form submission (implementation needed)
+async function saveFormSubmission(formData) {
+  // Implement the logic to save form data
+  // This could involve database operations or other data storage methods
+  console.log('Form data received:', formData);
+  // For now, we'll just return a resolved promise
+  return Promise.resolve();
+}
