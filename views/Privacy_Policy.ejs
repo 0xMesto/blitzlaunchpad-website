@@ -25,7 +25,7 @@
     </style>
 </head>
 <body class="bg-gradient-to-r from-blue-900 via-indigo-900 to-purple-900 text-white">
-    <div id="header"></div>
+    <%- include('../components/header') %>
 
     <main class="pt-24">
         <!-- Hero Section -->
@@ -171,8 +171,7 @@
         </section>
     </main>
 
-    <div id="footer"></div>
-
+    <%- include('../components/footer') %>
     <script>
         AOS.init({
             duration: 1000,

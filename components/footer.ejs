@@ -62,13 +62,13 @@
           <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">Let's Innovate Together</span>
           <div class="absolute bottom-0 left-0 w-1/4 h-1 bg-blue-500"></div>
         </h3>
-        <form class="space-y-4">
+        <form id="footerForm" class="space-y-4">
           <div class="relative">
-            <input type="email" placeholder="Your Email" class="w-full px-4 py-3 bg-white bg-opacity-10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all duration-300 pl-10">
+            <input type="email" name="email" placeholder="Your Email" class="w-full px-4 py-3 bg-white bg-opacity-10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all duration-300 pl-10" required>
             <i class="fas fa-envelope absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-300"></i>
           </div>
           <div class="relative">
-            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 bg-white bg-opacity-10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all duration-300 pl-10">
+            <input type="text" name="name" placeholder="Your Name" class="w-full px-4 py-3 bg-white bg-opacity-10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all duration-300 pl-10" required>
             <i class="fas fa-user absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-300"></i>
           </div>
           <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 rounded-lg transition-all duration-300 font-semibold text-lg transform hover:scale-105">
@@ -84,8 +84,8 @@
     <div class="mt-16 pt-8 border-t border-blue-800 flex flex-col md:flex-row justify-between items-center">
       <p class="text-blue-300">&copy; 2024 BlitzLaunchpad. Empowering Innovation.</p>
       <div class="mt-4 md:mt-0 space-x-6">
-        <a href="../Privacy_Policy" class="text-blue-300 hover:text-white transition-colors duration-300">Privacy Policy</a>
-        <a href="../Terms_of_Service" class="text-blue-300 hover:text-white transition-colors duration-300">Terms of Service</a>
+        <a href="/privacy-policy" class="text-blue-300 hover:text-white transition-colors duration-300">Privacy Policy</a>
+        <a href="/terms-of-service" class="text-blue-300 hover:text-white transition-colors duration-300">Terms of Service</a>
       </div>
     </div>
   </div>
@@ -94,3 +94,36 @@
     <div class="absolute bottom-0 right-0 w-40 h-40 bg-purple-500 rounded-full filter blur-3xl"></div>
   </div>
 </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const footerForm = document.getElementById('footerForm');
+  footerForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(footerForm);
+    const data = Object.fromEntries(formData);
+
+    fetch('/submit-contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(result => {
+      if (result.success) {
+        alert('Form submitted successfully!');
+        footerForm.reset();
+      } else {
+        alert('Error submitting form. Please try again.');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('An error occurred. Please try again later.');
+    });
+  });
+});
+</script>
